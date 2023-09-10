@@ -1,0 +1,346 @@
+
+:root{
+    --color-primary: rgb(214, 162, 171);
+    --color-primary-faint:rgb(226, 202, 206);
+    --color-secondary: rgb(255, 255, 255);
+    --color-primary-variant: rgb(108, 64, 72);
+    --color-success: rgb(54, 142, 54);
+    --color-info: rgb(54, 95, 142);
+    --color-warning: rgb(216, 195, 77);
+    --color-light: rgb(230, 230, 230);
+    --color-dark: rgb(24, 24, 24);
+    --padding-1: 0.5rem 0.8rem;
+    --padding-2: 1.1rem 1.4rem;
+    --border-radius: 10px;
+    --color-background: #d6d3d3;
+    --width-full: 100%;
+}
+
+
+.theme-dark{
+    --color-dark: rgb(230, 230, 230);
+    --color-light: rgb(24, 24, 24);
+    --color-background: #1d1d1d;
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.wrapper{
+    background-color: var(--color-light);
+    width: var(--width-full);
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+    display: grid;
+    grid-template-columns: 17% 80%;
+    grid-gap: 1rem;
+
+}
+
+.show{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: var(--padding-2);
+    display: none;
+    cursor: pointer;
+
+}
+.sidebar-short{
+    transform: translateX(-100%);
+}
+.sidebar-full{
+    transform: translateX(0%);
+}
+
+.sidebar{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #143056;
+    box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.23);
+    color: var(--color-dark);
+    transition: all 400ms ease-in-out;
+    z-index: 10;
+}
+
+.sidebar .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-dark);
+    font-size: 1rem;
+    padding: var(--padding-1);
+
+}
+.sidebar .top img{
+    width: 7rem;
+    height: 7em;
+    object-fit: cover;
+    scale: 0.6;
+}
+
+.sidebar .top span{
+    display: none;
+}
+
+.sidebar ul{
+    position: relative;
+    top: 4rem;
+    height: 80vh;
+    padding: 0;
+}
+
+.sidebar ul li{
+    list-style: none;
+    padding: var(--padding-1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    color: var(--color-light);
+    font-weight: 400;
+    padding: var(--padding-1);
+    transform: translateX(20%);
+
+}
+
+.sidebar ul li:hover{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    
+}
+
+.sidebar ul li:last-child{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--padding-1);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateX(0%);
+
+}
+
+.content{
+    padding: var(--padding-2);
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+
+.content .header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: var(--padding-1);
+margin: 0 auto;
+scale: 0.9;
+}
+
+.content .header h1{
+    color: var(--color-dark);
+}
+
+.content .header .switch{
+    display: block;
+    width: 50px;
+    height: 2rem;
+    display: flex;
+    border-radius: 10px;
+    padding: var(--padding-1);
+    align-items: center;
+    cursor: pointer;
+
+}
+.content .header .switch span{
+    border-radius: var(--border-radius);
+}
+.content .header .switch span:first-child{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.content .card-col{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    width: 100%;
+    height: 22vh;
+    scale: 0.8;
+
+}
+
+.content .card-col .card{
+width: 100%;
+height: 100%;
+background-color: var(--color-primary-variant);
+border-radius: var(--border-radius);
+padding: var(--padding-2);
+
+}
+
+.content .card-col .card .card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-light);
+    font-size: 1rem;
+    padding: var(--padding-1);
+    width: 100%;
+}
+.content .card-col .card .card-body{
+    width: 100%;
+    padding: var(--padding-1);
+    color: var(--color-light);
+}
+
+.content .card-col .card .card-footer{
+    width: 100%;
+    padding: var(--padding-1);
+}
+
+.content .card-col .card .card-footer button.btn{
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border: none;
+    padding: var(--padding-1);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 400ms ease-in-out;
+    width: 70%;
+    margin: 0 5rem;
+}
+
+.content .card-col .card:last-child{
+    background-color: var(--color-warning);
+}
+.content .card-col .card:nth-child(2){
+    background-color: var(--color-info);
+}
+
+.container-fluid{
+    width: 88%;
+    margin-top: 8rem;
+    display: block;
+    padding: 1rem 1.4rem;
+    height: 40vh;
+    /* overflow: hidden; */
+    overflow-y: scroll;
+    margin-top: 10rem;
+
+}
+table{
+    border-radius: 15px !important;
+    width: 90%;
+    padding: 1rem 1.7rem !important;
+    box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.23) !important;
+    border-collapse: collapse;
+
+
+}
+table thead th {
+    padding: 1rem;
+    background-color: #d6d3d3;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+table thead {
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid rgb(83, 81, 81);
+    width: 90%;
+
+}
+table tbody td {
+    text-align: left;
+    margin: 1rem;
+    padding: 1rem;
+    border-bottom: 2px solid rgb(83, 81, 81);
+    color: black;
+    transition: all 0.5s ease;
+    background-color: white;
+    
+}
+table tbody td .action{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table tbody td .action span{
+    padding: 0.4rem 0.5rem;
+    border-radius: 10px;
+
+}
+span.edit{
+    color: #143056;
+    cursor: pointer;
+}
+span.delete{
+    color: red;
+    cursor: pointer;
+}
+
+
+
+@media only  screen and (max-width: 756px) {
+    .wrapper{
+      grid-template-columns: 1fr;
+    }
+     .sidebar{
+      display: none;
+    }
+  
+   .show{
+       display: none;
+   }
+  
+   .content .card-col{
+      grid-template-columns:  1fr;
+   }
+  }
+
+  /* Add this CSS for the fade-out effect */
+tr {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Apply initial opacity and transform to preserve layout */
+tr:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a class for hiding rows */
+.hidden {
+    opacity: 0;
+  transform: translateY(-20px); /* Slightly move up before fading out */
+  pointer-events: none; /* Disable interactions on hidden rows */
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.remove-deleted {
+    transform: translateY(10rem) rotateZ(25deg);
+    opacity: 0;
+}
+
+.modal-btn{
+    margin-top: 8rem;
+    position: absolute;
+    left: 70%;
+}
