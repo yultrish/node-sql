@@ -243,3 +243,8 @@ body {
     font-weight: 800;
     font-size: larger;
  }
+
+  .item {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }

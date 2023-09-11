@@ -344,3 +344,8 @@ tr:not(.hidden) {
     position: absolute;
     left: 70%;
 }
+
+ .item {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }

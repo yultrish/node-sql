@@ -46,18 +46,23 @@ window.addEventListener('load', ()=>{
         if (result.status != 200 || result.status != 201){
           res = await result.json()
           console.log(res)
-          error.style.display = 'block'
-          errorMessage.textContent = res.message
+          // error.style.display = 'block'
+          // error.classlist.add('item')
+          // errorMessage.textContent = res.message
 
-            if(email.value === ''){
-          errorMessage.textContent = res.status
-        }
+              setTimeout(() => {
+                error.remove();
+            }, 3000)
+          
+        window.location.href = './dashboard.html'
+        
         }
 
       
       } catch (error) {
-        
+        console.log(error)
       }
 
     })
-})
+
+  })

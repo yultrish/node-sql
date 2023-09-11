@@ -1,0 +1,86 @@
+###
+# get all users
+GET http://localhost:7070/api/allUsers
+
+###
+# get all employees
+GET http://localhost:7070/api/employees
+
+###
+# get a single employee by id
+GET http://localhost:7070/api/employee/6
+
+###
+# register new user
+POST http://localhost:7070/api/user
+Content-Type: application/json
+
+{
+    "name": "Nana Adwoa",
+    "email": "addoa350@gmail.com",
+   "password": "mainAdmin"
+}
+
+###
+# login a user
+POST http://localhost:7070/api/login
+Content-Type: application/json
+
+{
+    "email": "addoa350@gmail.com",
+   "password": "mainAdmin"
+}
+
+###
+# create new employee
+POST http://localhost:7070/api/employee
+Content-Type: application/json
+
+{
+    "name": "Michael Bruce",
+    "email": "bruce@mail.com",
+   "job_title": "Software Engineer"
+}
+
+###
+# delete employee
+DELETE  http://localhost:7070/api/employee/1
+Content-Type: application/json
+
+{
+    "name": "Elijah Bruce",
+    "email": "yeboah@mail.com",
+   "job_title": "Software Engineer"
+}
+
+###
+# update employee
+PATCH  http://localhost:7070/api/employee/6
+Content-Type: application/json
+
+{
+    "name": "Elijah Agyare",
+    "email": "Armah@mail.com",
+   "job_title": "Software Engineer"
+}
+
+###
+GET http://localhost:7070/todo/allItems
+
+
+###
+POST http://localhost:7070/todo/items
+Content-Type: application/json
+
+{
+    "item": " "
+}
+
+
+###
+DELETE http://localhost:7070/todo/item/2
+Content-Type: application/json
+
+{
+    "item": " "
+}

@@ -56,6 +56,7 @@ window.addEventListener('load', () => {
                     </tr>
         `
         tbody.innerHTML = users
+        tbody.classList.add('item')
         })
         const deleteBtn = document.querySelectorAll('.delete') 
         console.log(deleteBtn) 
@@ -84,8 +85,10 @@ window.addEventListener('load', () => {
                             user.classList.add('remove-deleted');
                             user.addEventListener('transitionend', () => {
                                 user.remove();
+                                
                             })
-
+                        alert('deleted successfully')
+                        return
                     }
             }
             })
@@ -102,9 +105,9 @@ editBtn.forEach(btn => {
             try {
                 const editResult = await fetch(`http://localhost:7070/api/employee/${btnId}`);
                 if (editResult != 200 || 201) {
-                    response = await editResult.json();
+                 const   response = await editResult.json();
                 }else{
-                     const response = await editResult.json();
+                      response = await editResult.json();
                 console.log(response);
                 }
                

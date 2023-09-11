@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
                 res = await result.json()
                 console.log(res)
                  error.style.display = "block"
+                 error.classList.add('item')
                 message.textContent = res.error || res.message
 
                  setTimeout(() => {
