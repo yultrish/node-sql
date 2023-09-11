@@ -59,23 +59,21 @@ PATCH  http://localhost:7070/api/employee/6
 Content-Type: application/json
 
 {
-    "name": "Elijah Agyare",
-    "email": "Armah@mail.com",
+    "name": "zooya",
+    "email": "z@mail.com",
    "job_title": "Software Engineer"
 }
 
 ###
 GET http://localhost:7070/todo/allItems
 
-
 ###
 POST http://localhost:7070/todo/items
 Content-Type: application/json
 
 {
-    "item": " "
+    "item": "Watch javascript tutorial"
 }
-
 
 ###
 DELETE http://localhost:7070/todo/item/2

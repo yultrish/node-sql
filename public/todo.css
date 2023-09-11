@@ -1,156 +1,76 @@
-:root{
-    --background: #ffffffbe;
-    --background-light: white;
-    --color-primary: #274063;
-    --color-success: #288220;
-    --color-primary-variant: #205196;
-    --border-radius: 10px;
-}
-
-
-*{
+/* Reset some default styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.todos{
-    display: flex;
-    justify-content: space-between;
+/* Style the header */
+h1 {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    margin: 0;
 }
 
-.wrapper{
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 22rem auto;
-    /* overflow: hidden; */
-    background-color: var(--background);
+/* Style the main content */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.wrapper .sidebar{
-    width: 100%;
-    height: 100%;
-    padding: 1rem 0.4rem;
-    box-shadow: 10px 0px 5px -2px rgba(0, 0, 0, 0.5);
-    background-color: var(--background-light);
-}
-
-.wrapper .sidebar .top{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6rem;
-    width: 100%;
+/* Style the input and button */
+input[type="text"] {
+    width: 70%;
     padding: 0.5rem;
-    margin: 0 auto;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 1rem;
 }
 
-.wrapper main {
-    width: 100%;
-    height: 100%;
-    padding: 1rem 1.3rem;
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
-.wrapper main .nav{
-    width: 100%;
-    height: 5rem;
-    padding: 1.5rem;
+button:hover {
+    background-color: #555;
+}
+
+/* Style the to-do items */
+.to-do-container {
+    margin-top: 1rem;
+}
+
+.item {
+    background-color: #f5f5f5;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.wrapper main .container .to-do-container{
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 80vh;
-
-}
-.wrapper main .container .to-do-container h1{
-    margin-top: 3rem;
-
-}
-
-
-.wrapper main .container .to-do-container .add-item{
-    font-size: 1.8rem;
-    background-color: var(--color-primary);
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    padding: 1rem;
-    position: relative;
-    width: 40%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.8rem;
-}
-.wrapper main .container .to-do-container .add-item input{
-    width: 85%;
-    border-radius: var(--border-radius);
-
-}
-
-.wrapper main .container .to-do-container .add-item span{
-    font-size: 2rem;
-    font-weight: 500;
-    background-color: var(--color-success);
-    color: var(--background-light);
-    padding: 1rem;
-    border-radius: var(--border-radius);
+/* Style the delete button */
+.delete {
     cursor: pointer;
-}
-
-.wrapper main .container .to-do-container .item{
-    display: flex;
-    padding: 0.8rem 1rem;
-    justify-content: space-between;
-    align-items: center;
-    width: 40%;
-    background-color: #5f96bd;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 1rem;
-    color: var(--background-light);
-    border-radius: var(--border-radius);
-}
-.wrapper main .container .to-do-container .item span{
-    font-size: 2.4rem;
-    font-weight: 500;
-    cursor: pointer;
-}
-span.material-symbols-outlined.delete{
     color: red;
-
 }
 
-.user-deleting-transition{
-    opacity: 0;
-    transition: opacity 2s ease-out;
+.delete:hover {
+    text-decoration: underline;
 }
 
 
 
 
-@media screen and (max-width:768px) {
-    .sidebar{
-        display: none;
-    }
-    .wrapper{
-        grid-template-columns: 1fr;
-    }
 
-.wrapper main .container .to-do-container .add-item{
-        width: 80%;
-        }
-
-.wrapper main .container .to-do-container .item{
-    width: 80%;
-}
-
-}

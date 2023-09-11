@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 
 //api
 app.use('/api', routes)
-app.use('/list', router)
+app.use('/todo', router)
 
 
   //start app on this port
