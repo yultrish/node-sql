@@ -334,9 +334,9 @@ tr:not(.hidden) {
   overflow: hidden;
 }
 
-.remove-deleted {
-    transform: translateY(10rem) rotateZ(25deg);
-    opacity: 0;
+.item.item-deleting {
+      opacity: 0;
+    transition: opacity 2s ease-out;
 }
 
 .modal-btn{

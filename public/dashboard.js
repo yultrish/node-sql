@@ -80,13 +80,16 @@ window.addEventListener('load', () => {
                         console.log(res)
                     btn.classList.add('transition');
             // Listen for the 'transitionend' event and remove the row after the transition is complete
-             const usr = e.target.parentElement.parentElement;
-                            const user = usr.parentElement;
-                            user.classList.add('remove-deleted');
-                            user.addEventListener('transitionend', () => {
-                                user.remove();
-                                
-                            })
+            
+                            //   const employeeElement = e.target.parentElement;
+                      // CSS class to trigger the fading-out effect
+                           newRow.classList.add('item-deleting-transition');
+
+                        // Wait for the transition to complete and then remove the row
+                        newRow.addEventListener('transitionend', () => {
+                            newRow.remove();
+                            console.log('Employee deleted successfully');
+                        });
                         alert('deleted successfully')
                         return
                     }

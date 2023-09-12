@@ -14,13 +14,15 @@ window.addEventListener('load', () => {
         `;
         toDoContainer.appendChild(newItem);
 
-        // Add event listener for the delete button
+        // event listener for the delete button
         newItem.querySelector('.delete').addEventListener('click', async (e) => {
             const itemId = e.target.getAttribute('data-id');
             const confirmed = confirm(`Are you sure you want to delete item ${itemId}?`);
 
             if (confirmed) {
                 try {
+                    
+
                     const result = await fetch(`http://localhost:7070/todo/item/${itemId}`, {
                         method: 'DELETE',
                         headers: {
@@ -28,10 +30,20 @@ window.addEventListener('load', () => {
                         }
                     });
 
+
                     if (result.status === 200) {
                         // Remove the item from the client side
-                        newItem.remove();
-                        console.log('Item deleted successfully');
+                  
+                     const itemElement = e.target.parentElement;
+                      // CSS class to trigger the fading-out effect
+                    itemElement.classList.add('item-deleting-transition');
+
+            // Wait for the transition to complete and then remove the item
+            itemElement.addEventListener('transitionend', () => {
+                itemElement.remove();
+                console.log('Item deleted successfully');
+            });   
+                     
                     } else {
                         console.log('Failed to delete item');
                     }
