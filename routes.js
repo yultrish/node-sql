@@ -1,38 +1,5 @@
 const router = require('express').Router();
-const knex = require('./config/db')
-
-//create new item
-router.post('/items', async (req, res) => {
-  try {
-
-    const item = req.body.item;
-
-    if (!item) {
-      return res.status(400).json({ error: 'item is required' });
-    } else {
-      const itemId = await knex('todo').insert({
-        item: req.body.item
-      });
-      const currentItem = await knex('todo').where({ item }).first();
-      return res.status(201).json(currentItem);
-    }
-
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'failed to add item' });
-  }
-});
-
-// get all items
-router.get('/allItems', async (req, res) => {
-  try {
-    const allItems = await knex('todo').select('*');
-    return res.json(allItems);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Internal Server Error' });
-  }
-})
+const knex = require('./config/db');
 
 // get all users
 router.get('/allUsers', async (req, res) => {

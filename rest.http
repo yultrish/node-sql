@@ -37,21 +37,14 @@ POST http://localhost:7070/api/employee
 Content-Type: application/json
 
 {
-    "name": "Michael Bruce",
-    "email": "bruce@mail.com",
+    "name": "Elijah Bruce",
+    "email": "elijah@mail.com",
    "job_title": "Software Engineer"
 }
 
 ###
 # delete employee
 DELETE  http://localhost:7070/api/employee/1
-Content-Type: application/json
-
-{
-    "name": "Elijah Bruce",
-    "email": "yeboah@mail.com",
-   "job_title": "Software Engineer"
-}
 
 ###
 # update employee
@@ -59,26 +52,7 @@ PATCH  http://localhost:7070/api/employee/6
 Content-Type: application/json
 
 {
-    "name": "zooya",
-    "email": "z@mail.com",
+    "name": "Elijah Agyare",
+    "email": "Armah@mail.com",
    "job_title": "Software Engineer"
-}
-
-###
-GET http://localhost:7070/todo/allItems
-
-###
-POST http://localhost:7070/todo/items
-Content-Type: application/json
-
-{
-    "item": "Watch javascript tutorial"
-}
-
-###
-DELETE http://localhost:7070/todo/item/2
-Content-Type: application/json
-
-{
-    "item": " "
 }
